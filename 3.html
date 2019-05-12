@@ -1,50 +1,79 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>3rd task</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" type="text/css" media="screen" href="3.css" />
-  </head>
-  <body>
-    <div class="search">
-      <input class="search__input" type="text" />
-      <button class="button search__button">Szukaj</button>
-    </div>
-    <table id="myTable">
-      <tr>
-        <td>Walmart</td>
-      </tr>
-      <tr>
-        <td>State Grid</td>
-      </tr>
-      <tr>
-        <td>Sinopec Group</td>
-      </tr>
-      <tr>
-        <td>China National Petroleum</td>
-      </tr>
-      <tr>
-        <td>Royal Dutch Shell</td>
-      </tr>
-      <tr>
-        <td>Toyota Motor</td>
-      </tr>
-      <tr>
-        <td>Volkswagen</td>
-      </tr>
-      <tr>
-        <td>BP</td>
-      </tr>
-      <tr>
-        <td>Exxon Mobil</td>
-      </tr>
-      <tr>
-        <td>Berkshire Hathaway</td>
-      </tr>
-    </table>
 
-    <script src="3.js"></script>
-  </body>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>3rd task</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" type="text/css" media="screen" href="3.css" />
+</head>
+
+<body>
+  <div class="search">
+    <input id="myInput" type="text" />
+    <button class="button" onclick="myFunction()">Szukaj</button>
+  </div>
+  <table id="myTable">
+    <tr>
+      <td>Walmart</td>
+    </tr>
+    <tr>
+      <td>State Grid</td>
+    </tr>
+    <tr>
+      <td>Sinopec Group</td>
+    </tr>
+    <tr>
+      <td>China National Petroleum</td>
+    </tr>
+    <tr>
+      <td>Royal Dutch Shell</td>
+    </tr>
+    <tr>
+      <td>Toyota Motor</td>
+    </tr>
+    <tr>
+      <td>Volkswagen</td>
+    </tr>
+    <tr>
+      <td>BP</td>
+    </tr>
+    <tr>
+      <td>Exxon Mobil</td>
+    </tr>
+    <tr>
+      <td>Berkshire Hathaway</td>
+    </tr>
+  </table>
+  <script>
+    function myFunction() {
+      //define
+      var input, filter, table, tr, td, i, txtValue;
+      input = document.getElementById("myInput");
+      filter = input.value.toUpperCase();
+      table = document.getElementById("myTable");
+      tr = table.getElementsByTagName("tr");
+      //filter all table
+      for (i = 0; i < tr.length; i++) {
+        td = tr[i].getElementsByTagName("td")[0];
+        if (td) {
+          txtValue = td.textContent || td.innerText;
+          if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            tr[i].style.display = "";
+          } else {
+            tr[i].style.display = "none";
+          }
+        }
+      }
+    }
+    var clickenter = document.getElementById("myInput");
+    clickenter.addEventListener("keydown", function (e) {
+      if (e.keyCode === 13) {  //checks whether the pressed key is "Enter"
+        myFunction(e);
+      }
+    });
+  </script>
+</body>
+
 </html>
