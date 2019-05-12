@@ -20,7 +20,7 @@
 }
 .sidebar {
   background-color: #6c757d;
-  margin-bottom:15px;
+  margin-bottom: 15px;
   height: 50vw;
   flex-basis: 50%;
 }
@@ -34,14 +34,13 @@
 }
 
 @media screen and (min-width: 600px) {
-
   .content {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
   }
 }
 @media screen and (min-width: 900px) {
-  .page_content{
+  .page_content {
     flex-direction: row;
     flex-wrap: wrap;
     height: auto;

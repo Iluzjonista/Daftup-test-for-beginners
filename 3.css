@@ -1,14 +1,14 @@
 table {
-    margin: 30px 0px;
-    border-collapse: collapse;
-    width: 100%;
-    border: 1px solid #000;
+  margin: 30px 0px;
+  border-collapse: collapse;
+  width: 100%;
+  border: 1px solid #000;
 }
 th,
 td {
-    text-align: left;
-    padding: 12px;
+  text-align: left;
+  padding: 12px;
 }
 tr {
-    border-bottom: 1px solid #000;
+  border-bottom: 1px solid #000;
 }
